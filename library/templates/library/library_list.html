@@ -1,0 +1,32 @@
+<h1>Library List</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Book Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Actions</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for library in libraries %}
+        <tr>
+            <td>{{ library.student.name }}</td>
+            <td>{{ library.book.name }}</td>
+            <td>{{ library.start_date }}</td>
+            <td>{{ library.end_date }}</td>
+            <td>
+                
+                <a href="{% url 'library_edit' library.id %}">Edit</a> |
+                <a href="{% url 'library_delete' library.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'library_create' %}">Add New Record</a>
+
+

@@ -1,0 +1,8 @@
+<h1>{% if form.instance.pk %}Edit{% else %}New{% endif %} Student</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if form.instance.pk %}Update{% else %}Save{% endif %}</button>
+</form>
+
+<a href="{% url 'student_list' %}">Cancel</a>
