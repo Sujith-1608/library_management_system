@@ -9,7 +9,7 @@ This project is a Django-based web application designed to manage libraries, boo
 - Deployed on Render for live access.
 
 ## 🌐 Live Demo
-Access the live version of the project here: [Library Management System](https://library-management-system-slgz.onrender.com)
+Access the live version of the project here: [Library Management System](https://library-management-system-slgz.onrender.com/)
 
 ## 🧳 Technology Stack
 - **Backend**: Django Framework
