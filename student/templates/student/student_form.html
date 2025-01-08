@@ -1,8 +1,111 @@
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f5f7;
+        color: #495057;
+    }
+
+    h1 {
+        text-align: center;
+        color: #212529;
+        font-size: 2.2em;
+        margin: 30px 0;
+        font-weight: 600;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    form p {
+        margin: 15px 0;
+        font-size: 1.1em;
+        color: #495057;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #343a40;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form textarea,
+    form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-size: 1em;
+        color: #495057;
+        background-color: #f8f9fa;
+    }
+
+    form .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    form .button-group button {
+        width: 48%;
+        padding: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+        text-align: center;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    form .button-group button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    form .button-group .cancel-btn {
+        width: 48%;
+        padding: 12px;
+        background-color: #f8f9fa;
+        color: #6c757d;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 600;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    form .button-group .cancel-btn:hover {
+        background-color: #e9ecef;
+        color: #343a40;
+        transform: scale(1.05);
+    }
+</style>
+
 <h1>{% if form.instance.pk %}Edit{% else %}New{% endif %} Student</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">{% if form.instance.pk %}Update{% else %}Save{% endif %}</button>
+    <div class="button-group">
+        <button type="submit">{% if form.instance.pk %}Update{% else %}Save{% endif %}</button>
+        <a href="{% url 'student_list' %}" class="cancel-btn">Cancel</a>
+    </div>
 </form>
 
-<a href="{% url 'student_list' %}">Cancel</a>
+

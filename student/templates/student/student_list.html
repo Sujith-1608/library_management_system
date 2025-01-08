@@ -1,4 +1,99 @@
-<h1>Student List</h1>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7; /* Light background */
+        color: #495057;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #212529;
+        font-size: 2.5em;
+        margin: 20px 0;
+        font-weight: 600;
+    }
+    
+    table {
+        width: 80%; /* Increased table width */
+        margin: 40px auto;
+        background-color: #fff; 
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-collapse: collapse;
+    }
+    
+    table thead {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    th, td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+    
+    th {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    tr:hover {
+        background-color: #e9ecef;
+    }
+    
+    img {
+        border-radius: 5px;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    video {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    button, .add-student-link {
+        display: inline-block;
+        margin: 20px auto;
+        padding: 12px 25px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.1em;
+    }
+    
+    button:hover, .add-student-link:hover {
+        background-color: #0056b3;
+    }
+    
+    .add-student-link {
+        display: block;
+        text-align: center;
+        max-width: 200px;
+        margin: 20px auto;
+    }
+</style>
+
+<h1>STUDENT LIST</h1>
 <table border="1">
     <thead>
         <tr>
@@ -40,4 +135,4 @@
     </tbody>
 </table>
 
-<a href="{% url 'student_create' %}">Add Student</a>
+<a href="{% url 'student_create' %}" class="add-student-link">Add Student</a>

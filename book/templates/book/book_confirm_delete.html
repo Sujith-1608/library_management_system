@@ -1,8 +1,90 @@
-<h1>Are you sure you want to delete "{{ book.title }}"?</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, Delete</button>
-    <a href="{% url 'book_list' %}">Cancel</a>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #FF7043, #D84315);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        form button,
+        form a {
+            background-color: #FF5722;
+            color: #fff;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        form button:hover,
+        form a:hover {
+            background-color: #E64A19;
+            transform: scale(1.05);
+        }
+
+        form a {
+            background-color: #607D8B;
+        }
+
+        form a:hover {
+            background-color: #455A64;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                flex-direction: column;
+            }
+
+            form button,
+            form a {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Are you sure you want to delete "{{ book.title }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'book_list' %}">Cancel</a>
+    </form>
+</body>
+
+</html>
+
 
 

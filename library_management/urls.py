@@ -20,17 +20,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import redirect
 
-def redirect_to_student(request):
-    return redirect('/student/')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('main.urls')), 
     path('student/', include('student.urls')),
     path('book/', include('book.urls')),
     path('library/', include('library.urls')),
-    path('', redirect_to_student),
-    
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

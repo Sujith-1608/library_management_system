@@ -1,6 +1,79 @@
-<h1>Are you sure you want to delete {{ student.name }}?</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, Delete</button>
-    <a href="{% url 'student_list' %}">Cancel</a>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom right, #FF6F61, #FFB88C);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        button,
+        a {
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            background-color: #E74C3C;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #C0392B;
+        }
+
+        a {
+            background-color: #3498DB;
+            color: #fff;
+        }
+
+        a:hover {
+            background-color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Are you sure you want to delete {{ student.name }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'student_list' %}">Cancel</a>
+    </form>
+</body>
+
+</html>
+
